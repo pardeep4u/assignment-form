@@ -1,0 +1,54 @@
+.error {
+  border: 2px solid red;
+}
+
+.hero {
+  padding: 1rem 0;
+  font-size: 4rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(77, 56, 28) !important;
+}
+
+@media (max-width: 450px) {
+  .hero {
+    font-size: 3rem;
+  }
+}
+
+form > div:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+form > button:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+.hero-section {
+  background: url("https://via.placeholder.com/1500x800") no-repeat center
+    center;
+  background-size: cover;
+  color: white;
+  padding: 100px 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
