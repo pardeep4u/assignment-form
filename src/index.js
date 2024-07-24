@@ -8,7 +8,7 @@ import List from "./components/List";
 
 const router = createBrowserRouter([
   {
-    path: "/register",
+    path: "/",
     element: (
       <Background>
         <App />
