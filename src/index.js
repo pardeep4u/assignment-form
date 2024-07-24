@@ -23,26 +23,6 @@ const router = createBrowserRouter([
       </Background>
     ),
   },
-  {
-    path: "*",
-    element: (
-      <Background>
-        <div
-          style={{
-            textAlign: "center",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-            flexDirection: "column",
-          }}
-        >
-          <h1>404 - Page Not Found</h1>
-          <p>Sorry, the page you are looking for does not exist.</p>
-        </div>
-      </Background>
-    ),
-  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
