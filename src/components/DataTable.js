@@ -70,7 +70,7 @@ const DataTable = ({ data, onDelete, onEdit }) => {
           variant="primary"
           size="sm"
           onClick={() => {
-            navigate("/register");
+            navigate("/");
           }}
         >
           Add new user
