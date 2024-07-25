@@ -142,7 +142,11 @@ const EditForm = ({ item, onSave, onClose }) => {
         </Form.Control.Feedback>
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button
+        variant="primary"
+        type="submit"
+        ref={(el) => (formRefs.current[5] = el)}
+      >
         Save Changes
       </Button>
     </Form>

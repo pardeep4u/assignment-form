@@ -108,6 +108,7 @@ const FormComponent = () => {
           type="button"
           className="mr-2"
           onClick={handleSubmit}
+          ref={(el) => (formRefs.current[5] = el)}
         >
           Submit
         </Button>
