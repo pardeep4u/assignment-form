@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Button } from "react-bootstrap";
 import "./List.css";
 import { Form } from "react-bootstrap";
@@ -6,6 +6,17 @@ import { Form } from "react-bootstrap";
 const EditForm = ({ item, onSave, onClose }) => {
   const [formData, setFormData] = useState(item);
   const [errors, setErrors] = useState({});
+  const formRefs = useRef([]);
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const nextElement = formRefs.current[index + 1];
+      if (nextElement) {
+        nextElement.focus();
+      }
+    }
+  };
 
   useEffect(() => {
     setFormData(item);
@@ -59,6 +70,8 @@ const EditForm = ({ item, onSave, onClose }) => {
           value={formData.name}
           onChange={handleChange}
           isInvalid={!!errors.name}
+          ref={(el) => (formRefs.current[0] = el)}
+          onKeyDown={(e) => handleKeyDown(e, 0)}
         />
         <Form.Control.Feedback type="invalid">
           {errors.name}
@@ -73,6 +86,8 @@ const EditForm = ({ item, onSave, onClose }) => {
           value={formData.email}
           onChange={handleChange}
           isInvalid={!!errors.email}
+          ref={(el) => (formRefs.current[1] = el)}
+          onKeyDown={(e) => handleKeyDown(e, 1)}
         />
         <Form.Control.Feedback type="invalid">
           {errors.email}
@@ -87,6 +102,8 @@ const EditForm = ({ item, onSave, onClose }) => {
           value={formData.password}
           onChange={handleChange}
           isInvalid={!!errors.password}
+          ref={(el) => (formRefs.current[2] = el)}
+          onKeyDown={(e) => handleKeyDown(e, 2)}
         />
         <Form.Control.Feedback type="invalid">
           {errors.password}
@@ -101,6 +118,8 @@ const EditForm = ({ item, onSave, onClose }) => {
           value={formData.confirmPassword}
           onChange={handleChange}
           isInvalid={!!errors.confirmPassword}
+          ref={(el) => (formRefs.current[3] = el)}
+          onKeyDown={(e) => handleKeyDown(e, 3)}
         />
         <Form.Control.Feedback type="invalid">
           {errors.confirmPassword}
@@ -115,6 +134,8 @@ const EditForm = ({ item, onSave, onClose }) => {
           value={formData.dob}
           onChange={handleChange}
           isInvalid={!!errors.dob}
+          ref={(el) => (formRefs.current[4] = el)}
+          onKeyDown={(e) => handleKeyDown(e, 4)}
         />
         <Form.Control.Feedback type="invalid">
           {errors.dob}
